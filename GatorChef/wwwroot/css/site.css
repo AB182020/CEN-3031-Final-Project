@@ -23,3 +23,24 @@ body {
     background-image: url("/w3images/coffeehouse.jpg");
     min-height: 75%;
 }
+
+img {
+    width: 100px;
+    height: 200px;
+    object-fit: cover;
+}
+
+#header-image-menu {
+    top: 10px;
+    position: relative;
+}
+
+#header-image-menu img {
+        width: 100%;
+        margin: none;
+        padding: none;
+}
+
+navbar-custom {
+    background-color: lightgreen;
+}
