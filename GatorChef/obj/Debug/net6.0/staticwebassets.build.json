@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "clr8QHJNYXRxPHVRbly1CmFj5TrcMCYKSbEk8O2z6mY=",
+  "Hash": "46FOtpWHcdiKBMYR/RVhzIDPjRDrBEzB3WiGeoVV7kI=",
   "Source": "GatorChef",
   "BasePath": "_content/GatorChef",
   "Mode": "Default",
@@ -236,6 +236,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Grilled-Aubergine.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\morga\\Documents\\Code\\CEN-3031-Final-Project\\GatorChef\\wwwroot\\Images\\Header.jpg",
+      "SourceId": "GatorChef",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\morga\\Documents\\Code\\CEN-3031-Final-Project\\GatorChef\\wwwroot\\",
+      "BasePath": "_content/GatorChef",
+      "RelativePath": "Images/Header.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Header.jpg"
     },
     {
       "Identity": "C:\\Users\\morga\\Documents\\Code\\CEN-3031-Final-Project\\GatorChef\\wwwroot\\Images\\Pinto-Bean-Soup.jpg",
