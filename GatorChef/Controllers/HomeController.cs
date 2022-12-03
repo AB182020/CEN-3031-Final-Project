@@ -28,7 +28,7 @@ namespace GatorChef.Controllers
             return View();
         }
 
-        public IActionResult Logout()
+        public IActionResult Search()
         {
             return View();
         }
@@ -43,5 +43,7 @@ namespace GatorChef.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }
