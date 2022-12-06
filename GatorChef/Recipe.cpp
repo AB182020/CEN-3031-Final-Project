@@ -4,7 +4,7 @@
 
 #include "Recipe.h"
 
-
+//what would the recipe object would contain
 Recipe::Recipe() {
     name = "";
     description = "";

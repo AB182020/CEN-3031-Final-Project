@@ -5,6 +5,7 @@
 
 int main() {
 
+    //creates a storage object and reads it in
     Storage s;
     s.ReadFile();
 

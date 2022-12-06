@@ -13,6 +13,7 @@ using namespace std;
 
 class Recipe {
 
+//all of the variables in the recipe class
 public:
     string name;
     string description;
