@@ -11,6 +11,7 @@
 #pragma once
 using namespace std;
 
+//read in function of the csv file
 void Storage::ReadFile() {
     ifstream inFile("finalRecipes.csv");
     Recipe recipe;
@@ -22,9 +23,11 @@ void Storage::ReadFile() {
         while(getline(inFile, line)){
             istringstream stream(line);
 
+            //creating all the variables for the information from the csv
             string iD, name, description, ingredients, numIngredients, servingSize, numServings, recipeSteps, tags, searchTerms;
             string temp;
 
+            //reading in line by line the information from the csv
             getline(stream, iD, ',');
             getline(stream, name, ',');
             getline(stream, temp, '"');
@@ -50,129 +53,26 @@ void Storage::ReadFile() {
             recipe.name = name;
             recipe.description = description;
             recipe.ingredients = ingredients;
-//            bool add = false;
-//            int num = 0;
-//            string tempName;
-//            for (int i = 0; i <= ingredients.length(); i++){
-//                if (ingredients[i] == '\''){
-//                    num += 1;
-//                    if(num % 2 != 0){
-//                        add = true;
-//                    }else if(num % 2 == 0){
-//                        add = false;
-//                    }
-//                }else if(ingredients[i] == ' ' | ingredients[i] == ','){
-//                    continue;
-//                }else{
-//                    if(add){
-//                        tempName.push_back(ingredients[i]);
-//                    }else{
-//                        recipe.ingredients.push_back(tempName);
-//                        tempName = "";
-//                    }
-//
-//                }
-//
-//            }
-//            num = 0;
-//            add = false;
-//            tempName = "";
-//            for (int i = 0; i <= numIngredients.length(); i++){
-//                if (numIngredients[i] == '"'){
-//                    num += 1;
-//                    if(num % 2 != 0){
-//                        add = false;
-//                    }else if(num % 2 == 0){
-//                        add = true;
-//                    }
-//                }else if(numIngredients[i] == ','){
-//                    continue;
-//                }else{
-//                    if(add){
-//                        tempName.push_back(numIngredients[i]);
-//                    }else{
-//                        recipe.numIngredients.push_back(tempName);
-//                        tempName = "";
-//                    }
-//
-//                }
-//
-//            }
+
+    
+            //setting more variable equal to eachother
             recipe.numIngredients = numIngredients;
             recipe.servingSize = servingSize;
             //recipe.numServings = numIngredients; // typo?
             recipe.numServings = numServings;
 
-//            add = false;
-//            num = 0;
-//            tempName = "";
-//            for (int i = 0; i <= recipeSteps.length(); i++){
-//                if (recipeSteps[i] == '\''){
-//                    num += 1;
-//                    if(num % 2 != 0){
-//                        add = true;
-//                    }else if(num % 2 == 0){
-//                        add = false;
-//                    }
-//                }else{
-//                    if(add){
-//                        tempName.push_back(recipeSteps[i]);
-//                    }else{
-//                        recipe.recipeSteps.push_back(tempName);
-//                        tempName = "";
-//                    }
-//                }
-//            }
+//         
             recipe.recipeSteps = recipeSteps;
-
-//            add = false;
-//            num = 0;
-//            tempName = "";
-//            for (int i = 0; i <= tags.length(); i++){
-//                if (tags[i] == '\''){
-//                    num += 1;
-//                    if(num % 2 != 0){
-//                        add = true;
-//                    }else if(num % 2 == 0){
-//                        add = false;
-//                    }
-//                }else{
-//                    if(add){
-//                        tempName.push_back(tags[i]);
-//                    }else{
-//                        recipe.tags.push_back(tempName);
-//                        tempName = "";
-//                    }
-//                }
-//            }
 
             recipe.tags = tags;
 
-//            add = false;
-//            num = 0;
-//            tempName = "";
-//            for (int i = 0; i <= searchTerms.length(); i++){
-//                if (searchTerms[i] == '\''){
-//                    num += 1;
-//                    if(num % 2 != 0){
-//                        add = true;
-//                    }else if(num % 2 == 0){
-//                        add = false;
-//                    }
-//                }else{
-//                    if(add){
-//                        tempName.push_back(searchTerms[i]);
-//                    }else{
-//                        recipe.searchTerms.push_back(tempName);
-//                        tempName = "";
-//                    }
-//                }
-//            }
             recipe.searchTerms = searchTerms;
             insertMap(recipe);
         }
     }
 }
+
+//function for inserting recipes into the map
 void Storage :: insertMap(Recipe recipe) {
     //cout << recipe.name << endl; // good
 
@@ -199,7 +99,7 @@ void Storage :: insertMap(Recipe recipe) {
 //    for (int i = 0; i < recipe.searchTerms.size(); i++) {
 //        cout << recipe.searchTerms[i] << endl;
 //    }
-
+    //creating map and vectors of the data
     map<string, vector<string>> data;
     vector<vector<string>> values;
     vector<string> des;
@@ -219,19 +119,7 @@ void Storage :: insertMap(Recipe recipe) {
     vector<string> num;
     num.push_back(recipe.numIngredients);
 
-//    vector<string> tags;
-//    for (int i = 0; i < recipe.tags.size(); i++) {
-//        tags.push_back(recipe.tags[i]);
-//    }
-////    vector<string> numIngredients;
-////    for (int i = 0; i < recipe.numIngredients.size(); i++) {
-////        numIngredients.push_back(recipe.numIngredients[i]);
-////    }
-////   i vector<string> ingredients;
-////    //ingredients.push_back(recipe.ingredients);
-////    for (int i = 0; i < recipe.ingredients.size(); i++) {
-////        ingredients.push_back(recipe.ingredients[i]);
-////    }
+    //pushing information into the vector
     values.push_back(des);
     values.push_back(servingSize);
     values.push_back(numServings);
@@ -240,7 +128,6 @@ void Storage :: insertMap(Recipe recipe) {
     values.push_back(ingredients);
     values.push_back(search);
     values.push_back(num);
-
 
     for (int i = 0; i < values.size(); i++) {
         for (int j = 0; j < values[i].size(); j++) {
