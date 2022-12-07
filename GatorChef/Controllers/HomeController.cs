@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
+
+//The controller handles how the user interacts with the website
+//Basically what happens when the user clicks on certain buttons
 namespace GatorChef.Controllers
 {
     public class HomeController : Controller
@@ -18,12 +21,12 @@ namespace GatorChef.Controllers
             return View();
         }
 
-        public IActionResult MyRecipes()
+        public IActionResult MyRecipes() //When the user click the myrecipes tab display the view
         {
             return View();
         }
 
-        public IActionResult Explore()
+        public IActionResult Explore() //When the user click the explore tab display the view
         {
             return View();
         }
